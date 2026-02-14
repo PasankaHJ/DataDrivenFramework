@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-13T08:13:46 IST" name="Default suite" finished-at="2026-02-13T08:13:57 IST" duration-ms="10483">
+  <suite started-at="2026-02-14T21:50:57 IST" name="Default suite" finished-at="2026-02-14T21:51:25 IST" duration-ms="28000">
     <groups>
     </groups>
-    <test started-at="2026-02-13T08:13:46 IST" name="Default test" finished-at="2026-02-13T08:13:57 IST" duration-ms="10483">
+    <test started-at="2026-02-14T21:50:57 IST" name="Default test" finished-at="2026-02-14T21:51:25 IST" duration-ms="28000">
       <class name="testCases.CreatePortfolioTest">
-        <test-method signature="createProtfolioTest()[pri:0, instance:testCases.CreatePortfolioTest@6ca8564a]" started-at="2026-02-13T08:13:46 IST" name="createProtfolioTest" finished-at="2026-02-13T08:13:57 IST" duration-ms="10447" status="PASS">
+        <test-method signature="createProtfolioTest()[pri:0, instance:testCases.CreatePortfolioTest@50b472aa]" started-at="2026-02-14T21:50:57 IST" name="createProtfolioTest" finished-at="2026-02-14T21:51:25 IST" duration-ms="27969" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createProtfolioTest -->

@@ -3,6 +3,7 @@ package keywords;
 import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -70,6 +71,14 @@ public class GenericKeywords {
 
 	public void type(String Locator, String string) {
 		driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(string);
+	}
+	
+	public void enterCaptcha(String Locator) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter Captcha: ");
+		String inputText = scanner.nextLine();
+		
+		driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(inputText);
 	}
 
 	public void select() {

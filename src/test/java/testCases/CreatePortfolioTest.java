@@ -22,6 +22,9 @@ public class CreatePortfolioTest extends ApplicationKeywords {
 
 		// 201 - Enter password
 		app.type("password_L", "password");
+		
+		// 201 - Enter Captcha
+		app.enterCaptcha("captcha_L");
 
 		
 		app.closeBrowser();
