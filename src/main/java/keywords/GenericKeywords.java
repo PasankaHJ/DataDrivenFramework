@@ -7,10 +7,13 @@ import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GenericKeywords {
 	// 200
@@ -29,7 +32,7 @@ public class GenericKeywords {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		String browserName = prop.getProperty(browser);
 		if (browserName.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
@@ -53,9 +56,9 @@ public class GenericKeywords {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 	}
-	
-	//201
-	public void closeBrowser(){
+
+	// 201
+	public void closeBrowser() {
 		driver.quit();
 	}
 
@@ -66,19 +69,69 @@ public class GenericKeywords {
 
 	// 201
 	public void click(String Locator) {
-		driver.findElement(By.xpath(prop.getProperty(Locator))).click();
+		//driver.findElement(By.xpath(prop.getProperty(Locator))).click();
+		// 202
+		getElement(Locator).click();
 	}
 
 	public void type(String Locator, String string) {
-		driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(string);
+		//driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(string);
+		// 202
+		getElement(Locator).sendKeys(string);
 	}
-	
+
 	public void enterCaptcha(String Locator) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter Captcha: ");
 		String inputText = scanner.nextLine();
+
+		//driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(inputText);
+		// 202
+		getElement(Locator).sendKeys(inputText);
+	}
+
+	// 202
+	public WebElement getElement(String locatorKey) {
+		// Element is present
+		if (!isElementPresent(locatorKey)) {
+			// Report error
+			System.out.println("Element is not present: " + locatorKey);
+		}
+
+		// Element is visible
+		if (!isElementVisible(locatorKey)) {
+			// Report error
+			System.out.println("Element is not visible: " + locatorKey);
+		}
 		
-		driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(inputText);
+		// Create a web element and return web element
+		WebElement element = driver.findElement(By.xpath(prop.getProperty(locatorKey)));
+		return element;
+	}
+
+	// 202
+	public boolean isElementPresent(String locatorKey) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		try {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty(locatorKey))));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	public boolean isElementVisible(String locatorName) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		try {
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty(locatorName))));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 	public void select() {
