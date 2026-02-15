@@ -19,11 +19,13 @@ public class GenericKeywords {
 	// 200
 	public WebDriver driver = null;
 
-	// 201
+	// 201, 203
 	Properties prop = null;
 
 	// 200
 	public void openBrowser(String browser) {
+		/*
+		// 203 - Removed and added in ApplicationKeywords
 		prop = new Properties();
 		try {
 			FileInputStream fStream = new FileInputStream(
@@ -32,6 +34,7 @@ public class GenericKeywords {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		*/
 
 		String browserName = prop.getProperty(browser);
 		if (browserName.equalsIgnoreCase("chrome")) {
