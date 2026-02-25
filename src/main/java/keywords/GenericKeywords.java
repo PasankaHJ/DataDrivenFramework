@@ -88,9 +88,9 @@ public class GenericKeywords {
 		System.out.println("Enter Captcha: ");
 		String inputText = scanner.nextLine();
 
-		//driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(inputText);
+		//driver.findElement(getElement(Locator)).sendKeys(inputText);
 		// 202
-		getElement(Locator).sendKeys(inputText);
+		driver.findElement(getLocator(Locator)).sendKeys(inputText);
 	}
 
 	// 202
@@ -108,7 +108,7 @@ public class GenericKeywords {
 		}
 		
 		// Create a web element and return web element
-		WebElement element = driver.findElement(By.xpath(prop.getProperty(locatorKey)));
+		WebElement element = driver.findElement(getLocator(locatorKey));
 		return element;
 	}
 
@@ -116,7 +116,7 @@ public class GenericKeywords {
 	public boolean isElementPresent(String locatorKey) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty(locatorKey))));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator(locatorKey)));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -128,13 +128,35 @@ public class GenericKeywords {
 	public boolean isElementVisible(String locatorName) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		try {
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty(locatorName))));
+			wait.until(ExpectedConditions.presenceOfElementLocated(getLocator(locatorName)));
 
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
 		return true;
+	}
+	
+	// 204
+	public By getLocator (String locatorKey) {
+		By by = null;
+		
+		if(locatorKey.endsWith("_xpath")) {
+			by = By.xpath(prop.getProperty(locatorKey));
+		}
+		else if(locatorKey.endsWith("_id")) {
+			by = By.id(prop.getProperty(locatorKey));
+		}
+		else if(locatorKey.endsWith("_css")) {
+			by = By.cssSelector(prop.getProperty(locatorKey));
+		}
+		else if(locatorKey.endsWith("_linkText")) {
+			by = By.linkText(prop.getProperty(locatorKey));
+		}
+		else if(locatorKey.endsWith("_partialLinkText")) {
+			by = By.partialLinkText(prop.getProperty(locatorKey));
+		}
+		return by;
 	}
 
 	public void select() {

@@ -15,16 +15,16 @@ public class CreatePortfolioTest extends ApplicationKeywords {
 		app.openURL("URL");
 
 		// 201
-		app.click("signIn_L");
+		app.click("signIn_L_xpath");
 
 		// 201 - Enter username
-		app.type("username_L", "username");
+		app.type("username_L_xpath", "username");
 
 		// 201 - Enter password
-		app.type("password_L", "password");
+		app.type("password_L_xpath", "password");
 		
 		// 201 - Enter Captcha
-		app.enterCaptcha("captcha_L");
+		app.enterCaptcha("captcha_L_xpath");
 
 		
 		app.closeBrowser();
