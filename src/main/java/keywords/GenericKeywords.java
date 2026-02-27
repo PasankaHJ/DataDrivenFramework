@@ -178,4 +178,8 @@ public class GenericKeywords {
 	public void dismissAlert() {
 
 	}
+	
+	public void quitDriver() {
+		driver.quit();
+	}
 }

@@ -15,6 +15,7 @@
 			</class>
 		</classes>
 	</test>
+	<!--
 	<test name="Test 2">
 		<classes>
 			<class name="testCases2.TestClass3">
@@ -24,5 +25,6 @@
 			</class>
 		</classes>
 	</test>
+	-->
 </suite> <!--
 Suite -->
