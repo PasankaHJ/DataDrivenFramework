@@ -3,15 +3,15 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test 1(failed)">
     <classes>
-      <class name="testCases2.TestClass1">
+      <class name="testCases2.TestClass2">
         <methods>
           <include name="berforeMethod"/>
-          <include name="method2" invocation-numbers="0"/>
+          <include name="method4"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- testCases2.TestClass1 -->
+      </class> <!-- testCases2.TestClass2 -->
     </classes>
   </test> <!-- Test 1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

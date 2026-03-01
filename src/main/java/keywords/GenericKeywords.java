@@ -14,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -27,6 +28,9 @@ public class GenericKeywords {
 
 	// 209
 	public ExtentTest test;
+	
+	// 210
+	public SoftAssert softAssert;
 
 	// 200
 	public void openBrowser(String browser) {
@@ -74,6 +78,17 @@ public class GenericKeywords {
 		this.test = test;
 	}
 
+	// 210
+	public void reportFailure(String msg) {
+		logError(msg);
+		softAssert.fail(msg);
+	}
+	
+	// 210 - Submit all the errors to softAssert and close the assertion
+	public void reportAll() {
+		softAssert.assertAll();
+	}
+	
 	// 200
 	public void openURL(String URL) {
 		// 209
@@ -139,6 +154,11 @@ public class GenericKeywords {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator(locatorKey)));
 
 		} catch (Exception e) {
+			// 210
+			reportFailure("Unable to locate the element with locator: " + getLocator(locatorKey));
+			// or
+			reportFailure(e.getMessage());
+			
 			e.printStackTrace();
 			return false;
 		}
@@ -151,6 +171,9 @@ public class GenericKeywords {
 			wait.until(ExpectedConditions.presenceOfElementLocated(getLocator(locatorName)));
 
 		} catch (Exception e) {
+			//210
+			reportFailure(e.getMessage());
+			
 			e.printStackTrace();
 			return false;
 		}

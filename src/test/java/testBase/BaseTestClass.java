@@ -19,7 +19,6 @@ public class BaseTestClass {
 	public ExtentReports extentReport;
 	public ExtentTest extentTest;
 
-
 	@BeforeTest
 	public void beforeTest(ITestContext context) {
 		System.out.println("BaseTestClass beforeTest");
@@ -34,10 +33,10 @@ public class BaseTestClass {
 		extentReport = ExtentManager.getReports();
 		extentTest = extentReport.createTest(context.getCurrentXmlTest().getName());
 		extentTest.log(Status.INFO, "Starting Test: " + context.getCurrentXmlTest().getName());
-		
+
 		// 209
 		app.setReport(extentTest);
-		
+
 		context.setAttribute("extentReport", extentReport);
 		context.setAttribute("extentTest", extentTest);
 	}
@@ -70,7 +69,12 @@ public class BaseTestClass {
 	}
 
 	@AfterMethod(alwaysRun = true)
-	public void afterMethod() {
-		System.out.println("BaseTestClass afterMethod");
+	public void afterMethod(ITestContext context) {
+		app = (ApplicationKeywords) context.getAttribute("app");
+		if (app != null) {
+			app.quitDriver();
+		}
+		// 210 - Submit all soft assertion failures
+		app.reportAll();
 	}
 }

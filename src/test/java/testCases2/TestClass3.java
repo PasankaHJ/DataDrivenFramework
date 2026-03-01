@@ -15,8 +15,12 @@ public class TestClass3 extends BaseTestClass{
 		
 		// 207
 		//ApplicationKeywords app = (ApplicationKeywords) con.getAttribute("app");
-		extentTest.log(Status.INFO, "Open Browser");
-		app.openBrowser("browser");
-		app.openURL("URL");
+		//extentTest.log(Status.INFO, "Open Browser");
+		//app.openBrowser("browser");
+		//app.openURL("URL");
+		
+		// 210
+		// Failure
+		app.reportFailure("Unable to load URL");
 	}
 }
