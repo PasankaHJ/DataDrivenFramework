@@ -12,6 +12,15 @@
           <include name="afterTest"/>
         </methods>
       </class> <!-- testCases2.TestClass2 -->
+      <class name="testCases2.TestClass1">
+        <methods>
+          <include name="berforeMethod"/>
+          <include name="method2"/>
+          <include name="afterMethod"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- testCases2.TestClass1 -->
     </classes>
   </test> <!-- Test 1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

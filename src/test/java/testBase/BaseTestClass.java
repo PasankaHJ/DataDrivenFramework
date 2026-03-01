@@ -1,6 +1,7 @@
 package testBase;
 
 import org.testng.ITestContext;
+import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -59,13 +60,19 @@ public class BaseTestClass {
 
 	@BeforeMethod(alwaysRun = true)
 	public void berforeMethod(ITestContext context) {
-		System.out.println("BaseTestClass berforeMethod");
-
+		// System.out.println("BaseTestClass berforeMethod");
 		// 207
 		// 208 - removed ApplicationKeywords before app
 		app = (ApplicationKeywords) context.getAttribute("app");
 		extentReport = (ExtentReports) context.getAttribute("extentReport");
 		extentTest = (ExtentTest) context.getAttribute("extentTest");
+
+		// 211
+		String criticalFailure = (String) context.getAttribute("isCriticalFailure");
+		if (criticalFailure != null && criticalFailure.equals("true")) {
+			app.logSkip("Critical Failure in Previous Test Method");
+			throw new SkipException("Critical Failure in Previous Test Method");
+		}
 	}
 
 	@AfterMethod(alwaysRun = true)

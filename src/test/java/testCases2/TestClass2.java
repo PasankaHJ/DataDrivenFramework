@@ -32,13 +32,15 @@ public class TestClass2 extends BaseTestClass {
 		extentTest.log(Status.INFO, "Open Browser");
 		app.openBrowser("browser");
 		app.openURL("URL");
+		app.reportFailure("Unable to load application", false);
 		app.click("signIn_L_xpath");
 		app.type("username_L_xpath", "username");
 		app.type("password_L_xpath", "password");
-		app.enterCaptcha("captcha_L_xpath");
 		// 210
 		// Failure
-		app.reportFailure("Unable to enter captcha");
+		app.reportFailure("Unable to enter captcha", true);
+		app.enterCaptcha("captcha_L_xpath");
+
 	}
 
 	@Test

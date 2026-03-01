@@ -14,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -28,7 +29,7 @@ public class GenericKeywords {
 
 	// 209
 	public ExtentTest test;
-	
+
 	// 210
 	public SoftAssert softAssert;
 
@@ -43,7 +44,7 @@ public class GenericKeywords {
 		 */
 
 		String browserName = prop.getProperty(browser);
-		//test.log(Status.INFO, "Opening browser" + browser);
+		// test.log(Status.INFO, "Opening browser" + browser);
 		logInfo("Opening browser" + browser);
 		if (browserName.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
@@ -78,17 +79,30 @@ public class GenericKeywords {
 		this.test = test;
 	}
 
-	// 210
-	public void reportFailure(String msg) {
+	// 211
+	public void reportFailure(String msg, boolean isCriticalFailure) {
 		logError(msg);
 		softAssert.fail(msg);
+
+		if (isCriticalFailure) {
+			Reporter.getCurrentTestResult().getTestContext().setAttribute("isCriticalFailure", "true");
+			reportAll();
+		}
 	}
-	
+
+	// 210
+	// 211
+	public void reportFailure(String msg) {
+		// logError(msg);
+		// softAssert.fail(msg);
+		reportFailure(msg, false);
+	}
+
 	// 210 - Submit all the errors to softAssert and close the assertion
 	public void reportAll() {
 		softAssert.assertAll();
 	}
-	
+
 	// 200
 	public void openURL(String URL) {
 		// 209
@@ -158,7 +172,7 @@ public class GenericKeywords {
 			reportFailure("Unable to locate the element with locator: " + getLocator(locatorKey));
 			// or
 			reportFailure(e.getMessage());
-			
+
 			e.printStackTrace();
 			return false;
 		}
@@ -171,9 +185,9 @@ public class GenericKeywords {
 			wait.until(ExpectedConditions.presenceOfElementLocated(getLocator(locatorName)));
 
 		} catch (Exception e) {
-			//210
+			// 210
 			reportFailure(e.getMessage());
-			
+
 			e.printStackTrace();
 			return false;
 		}

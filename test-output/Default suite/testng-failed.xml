@@ -3,11 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.CreatePortfolioTest">
+      <class name="testCases2.TestClass2">
         <methods>
-          <include name="createProtfolioTest"/>
+          <include name="berforeMethod"/>
+          <include name="method4"/>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
+          <include name="afterTest"/>
+          <include name="method5"/>
         </methods>
-      </class> <!-- testCases.CreatePortfolioTest -->
+      </class> <!-- testCases2.TestClass2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
