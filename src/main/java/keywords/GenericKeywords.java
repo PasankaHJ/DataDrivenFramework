@@ -39,7 +39,8 @@ public class GenericKeywords {
 		 */
 
 		String browserName = prop.getProperty(browser);
-		test.log(Status.INFO, "Opening browser" + browser);
+		//test.log(Status.INFO, "Opening browser" + browser);
+		logInfo("Opening browser" + browser);
 		if (browserName.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 			ChromeOptions options = new ChromeOptions();
