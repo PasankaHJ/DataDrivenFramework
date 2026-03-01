@@ -1,75 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="5" passed="2" failed="0" skipped="0">
+<testng-results ignored="1" total="6" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-27T22:37:13 IST" name="Suite" finished-at="2026-02-27T22:37:20 IST" duration-ms="7268">
+  <suite started-at="2026-03-01T16:23:30 IST" name="Suite" finished-at="2026-03-01T16:23:55 IST" duration-ms="24299">
     <groups>
     </groups>
-    <test started-at="2026-02-27T22:37:13 IST" name="Test 1" finished-at="2026-02-27T22:37:20 IST" duration-ms="7268">
-      <class name="testCases2.TestClass1">
-        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass1@32eff876]" started-at="2026-02-27T22:37:14 IST" name="berforeMethod" finished-at="2026-02-27T22:37:14 IST" duration-ms="1" status="PASS">
+    <test started-at="2026-03-01T16:23:30 IST" name="Test" finished-at="2026-03-01T16:23:55 IST" duration-ms="24299">
+      <class name="testCases2.TestClass3">
+        <test-method is-config="true" signature="beforeTest(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass3@5fdcaa40]" started-at="2026-03-01T16:23:30 IST" name="beforeTest" finished-at="2026-03-01T16:23:30 IST" duration-ms="172" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5ca1f591]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- berforeMethod -->
-        <test-method signature="method2()[pri:0, instance:testCases2.TestClass1@32eff876]" started-at="2026-02-27T22:37:14 IST" name="method2" finished-at="2026-02-27T22:37:19 IST" duration-ms="5200" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- method2 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testCases2.TestClass1@32eff876]" started-at="2026-02-27T22:37:19 IST" name="afterMethod" finished-at="2026-02-27T22:37:19 IST" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- testCases2.TestClass1 -->
-      <class name="testCases2.TestClass2">
-        <test-method is-config="true" signature="beforeTest(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-02-27T22:37:13 IST" name="beforeTest" finished-at="2026-02-27T22:37:13 IST" duration-ms="188" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5ca1f591]]>
+                <![CDATA[org.testng.TestRunner@6950ed69]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-02-27T22:37:13 IST" name="berforeMethod" finished-at="2026-02-27T22:37:13 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass3@5fdcaa40]" started-at="2026-03-01T16:23:30 IST" name="berforeMethod" finished-at="2026-03-01T16:23:30 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5ca1f591]]>
+                <![CDATA[org.testng.TestRunner@6950ed69]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- berforeMethod -->
-        <test-method signature="method4()[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-02-27T22:37:13 IST" name="method4" finished-at="2026-02-27T22:37:14 IST" duration-ms="1275" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- method4 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-02-27T22:37:14 IST" name="afterMethod" finished-at="2026-02-27T22:37:14 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTest(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-02-27T22:37:19 IST" name="afterTest" finished-at="2026-02-27T22:37:20 IST" duration-ms="561" status="PASS">
+        <test-method signature="method6(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass3@5fdcaa40]" started-at="2026-03-01T16:23:30 IST" name="method6" finished-at="2026-03-01T16:23:41 IST" duration-ms="10961" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5ca1f591]]>
+                <![CDATA[org.testng.TestRunner@6950ed69]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method6 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testCases2.TestClass3@5fdcaa40]" started-at="2026-03-01T16:23:41 IST" name="afterMethod" finished-at="2026-03-01T16:23:41 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterTest(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass3@5fdcaa40]" started-at="2026-03-01T16:23:54 IST" name="afterTest" finished-at="2026-03-01T16:23:55 IST" duration-ms="725" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6950ed69]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
+      </class> <!-- testCases2.TestClass3 -->
+      <class name="testCases2.TestClass1">
+        <test-method signature="method1()[pri:0, instance:testCases2.TestClass1@6e20b53a]" started-at="2026-03-01T16:23:41 IST" name="method1" finished-at="2026-03-01T16:23:41 IST" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method1 -->
+        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass1@6e20b53a]" started-at="2026-03-01T16:23:41 IST" name="berforeMethod" finished-at="2026-03-01T16:23:41 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6950ed69]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- berforeMethod -->
+        <test-method signature="method2()[pri:0, instance:testCases2.TestClass1@6e20b53a]" started-at="2026-03-01T16:23:41 IST" name="method2" finished-at="2026-03-01T16:23:41 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method2 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testCases2.TestClass1@6e20b53a]" started-at="2026-03-01T16:23:41 IST" name="afterMethod" finished-at="2026-03-01T16:23:41 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass1@6e20b53a]" started-at="2026-03-01T16:23:41 IST" name="berforeMethod" finished-at="2026-03-01T16:23:41 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6950ed69]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- berforeMethod -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testCases2.TestClass1@6e20b53a]" started-at="2026-03-01T16:23:41 IST" name="afterMethod" finished-at="2026-03-01T16:23:41 IST" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testCases2.TestClass1 -->
+      <class name="testCases2.TestClass2">
+        <test-method signature="method3()[pri:0, instance:testCases2.TestClass2@71809907]" started-at="2026-03-01T16:23:41 IST" name="method3" finished-at="2026-03-01T16:23:41 IST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method3 -->
+        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@71809907]" started-at="2026-03-01T16:23:41 IST" name="berforeMethod" finished-at="2026-03-01T16:23:41 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6950ed69]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- berforeMethod -->
+        <test-method signature="method4()[pri:0, instance:testCases2.TestClass2@71809907]" started-at="2026-03-01T16:23:41 IST" name="method4" finished-at="2026-03-01T16:23:54 IST" duration-ms="12365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- method4 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testCases2.TestClass2@71809907]" started-at="2026-03-01T16:23:41 IST" name="afterMethod" finished-at="2026-03-01T16:23:41 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@71809907]" started-at="2026-03-01T16:23:41 IST" name="berforeMethod" finished-at="2026-03-01T16:23:41 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6950ed69]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- berforeMethod -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testCases2.TestClass2@71809907]" started-at="2026-03-01T16:23:54 IST" name="afterMethod" finished-at="2026-03-01T16:23:54 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
       </class> <!-- testCases2.TestClass2 -->
-    </test> <!-- Test 1 -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

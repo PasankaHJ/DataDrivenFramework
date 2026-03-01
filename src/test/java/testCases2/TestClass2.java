@@ -25,8 +25,13 @@ public class TestClass2 extends BaseTestClass{
 		
 		//207
 		//con.setAttribute(number, 3000);
-		extentTest.log(Status.INFO, "Open Browser");
-		app.openBrowser("browser");
+		//extentTest.log(Status.INFO, "Open Browser");
+		//app.openBrowser("browser");
+		//app.openURL("URL");
+		app.click("signIn_L_xpath");
+		app.type("username_L_xpath", "username");
+		app.type("password_L_xpath", "password");
+		app.enterCaptcha("captcha_L_xpath");
 	}
 
 	@Test

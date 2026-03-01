@@ -24,7 +24,7 @@ public class TestClass1 extends BaseTestClass{
 		//System.out.println(con.getAttribute(number));
 		
 		// 208
-		extentTest.log(Status.INFO, "Open Website URL");
-		app.openURL("URL");
+		//extentTest.log(Status.INFO, "Open Website URL");
+		//app.openURL("URL");
 	}
 }

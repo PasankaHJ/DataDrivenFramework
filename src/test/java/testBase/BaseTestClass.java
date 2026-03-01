@@ -34,7 +34,10 @@ public class BaseTestClass {
 		extentReport = ExtentManager.getReports();
 		extentTest = extentReport.createTest(context.getCurrentXmlTest().getName());
 		extentTest.log(Status.INFO, "Starting Test: " + context.getCurrentXmlTest().getName());
-
+		
+		// 209
+		app.setReport(extentTest);
+		
 		context.setAttribute("extentReport", extentReport);
 		context.setAttribute("extentTest", extentTest);
 	}

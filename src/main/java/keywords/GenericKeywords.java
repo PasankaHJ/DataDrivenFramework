@@ -15,6 +15,9 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class GenericKeywords {
 	// 200
 	public WebDriver driver = null;
@@ -22,21 +25,21 @@ public class GenericKeywords {
 	// 201, 203
 	Properties prop = null;
 
+	// 209
+	public ExtentTest test;
+
 	// 200
 	public void openBrowser(String browser) {
 		/*
-		// 203 - Removed and added in ApplicationKeywords
-		prop = new Properties();
-		try {
-			FileInputStream fStream = new FileInputStream(
-					System.getProperty("user.dir") + "//src//test//resources//rediff.properties");
-			prop.load(fStream);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		*/
+		 * // 203 - Removed and added in ApplicationKeywords prop = new Properties();
+		 * try { FileInputStream fStream = new FileInputStream(
+		 * System.getProperty("user.dir") +
+		 * "//src//test//resources//rediff.properties"); prop.load(fStream); } catch
+		 * (Exception e) { e.printStackTrace(); }
+		 */
 
 		String browserName = prop.getProperty(browser);
+		test.log(Status.INFO, "Opening browser" + browser);
 		if (browserName.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 			ChromeOptions options = new ChromeOptions();
@@ -65,30 +68,44 @@ public class GenericKeywords {
 		driver.quit();
 	}
 
+	// 209
+	public void setReport(ExtentTest test) {
+		this.test = test;
+	}
+
 	// 200
 	public void openURL(String URL) {
+		// 209
+		// test.log(Status.INFO, "Opening URL");
+		logInfo("Opening URL");
 		driver.get(prop.getProperty(URL));
 	}
 
 	// 201
 	public void click(String Locator) {
-		//driver.findElement(By.xpath(prop.getProperty(Locator))).click();
+		// driver.findElement(By.xpath(prop.getProperty(Locator))).click();
+		// 209
+		// test.log(Status.INFO, "Click on the locator " + prop.getProperty(Locator));
+		logInfo("Click on the locator " + prop.getProperty(Locator));
+
 		// 202
 		getElement(Locator).click();
 	}
 
 	public void type(String Locator, String string) {
-		//driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(string);
+		// driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(string);
 		// 202
+		logInfo("Print value");
 		getElement(Locator).sendKeys(string);
 	}
 
 	public void enterCaptcha(String Locator) {
+		logInfo("Enter captcha");
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter Captcha: ");
 		String inputText = scanner.nextLine();
 
-		//driver.findElement(getElement(Locator)).sendKeys(inputText);
+		// driver.findElement(getElement(Locator)).sendKeys(inputText);
 		// 202
 		driver.findElement(getLocator(Locator)).sendKeys(inputText);
 	}
@@ -96,6 +113,7 @@ public class GenericKeywords {
 	// 202
 	public WebElement getElement(String locatorKey) {
 		// Element is present
+		logInfo("Check element is present");
 		if (!isElementPresent(locatorKey)) {
 			// Report error
 			System.out.println("Element is not present: " + locatorKey);
@@ -103,10 +121,11 @@ public class GenericKeywords {
 
 		// Element is visible
 		if (!isElementVisible(locatorKey)) {
+			logInfo("Check element is visible");
 			// Report error
 			System.out.println("Element is not visible: " + locatorKey);
 		}
-		
+
 		// Create a web element and return web element
 		WebElement element = driver.findElement(getLocator(locatorKey));
 		return element;
@@ -136,27 +155,43 @@ public class GenericKeywords {
 		}
 		return true;
 	}
-	
+
 	// 204
-	public By getLocator (String locatorKey) {
+	public By getLocator(String locatorKey) {
 		By by = null;
-		
-		if(locatorKey.endsWith("_xpath")) {
+
+		if (locatorKey.endsWith("_xpath")) {
 			by = By.xpath(prop.getProperty(locatorKey));
-		}
-		else if(locatorKey.endsWith("_id")) {
+		} else if (locatorKey.endsWith("_id")) {
 			by = By.id(prop.getProperty(locatorKey));
-		}
-		else if(locatorKey.endsWith("_css")) {
+		} else if (locatorKey.endsWith("_css")) {
 			by = By.cssSelector(prop.getProperty(locatorKey));
-		}
-		else if(locatorKey.endsWith("_linkText")) {
+		} else if (locatorKey.endsWith("_linkText")) {
 			by = By.linkText(prop.getProperty(locatorKey));
-		}
-		else if(locatorKey.endsWith("_partialLinkText")) {
+		} else if (locatorKey.endsWith("_partialLinkText")) {
 			by = By.partialLinkText(prop.getProperty(locatorKey));
 		}
 		return by;
+	}
+
+	// 209
+	public void logInfo(String msg) {
+		test.log(Status.INFO, msg);
+	}
+
+	// 209
+	public void logError(String msg) {
+		test.log(Status.FAIL, msg);
+	}
+
+	// 209
+	public void logWarning(String msg) {
+		test.log(Status.WARNING, msg);
+	}
+
+	// 209
+	public void logSkip(String msg) {
+		test.log(Status.SKIP, msg);
 	}
 
 	public void select() {
@@ -178,7 +213,7 @@ public class GenericKeywords {
 	public void dismissAlert() {
 
 	}
-	
+
 	public void quitDriver() {
 		driver.quit();
 	}
