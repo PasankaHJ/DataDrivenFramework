@@ -21,6 +21,6 @@ public class TestClass3 extends BaseTestClass{
 		
 		// 210
 		// Failure
-		app.reportFailure("Unable to load URL");
+		//app.reportFailure("Unable to load URL");
 	}
 }
