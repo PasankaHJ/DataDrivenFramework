@@ -33,15 +33,18 @@ public class TestClass2 extends BaseTestClass {
 		app.openBrowser("browser");
 		app.openURL("URL");
 		// 211
-		app.reportFailure("Unable to load application", false);
+		//app.reportFailure("Unable to load application", false);
 		app.click("signIn_L_xpath");
 		app.type("username_L_xpath", "username");
-		app.type("password_L_xpath", "password");
 		// 210
 		// Failure
 		// 211
-		app.reportFailure("Unable to enter captcha", true);
+		//app.reportFailure("Unable to enter password", true);
+		app.type("password_L_xpath", "password");
 		app.enterCaptcha("captcha_L_xpath");
+		
+		// 213
+		//app.reportAll();
 
 	}
 
