@@ -2,16 +2,16 @@
 <testng-results ignored="3" total="5" passed="0" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-01T21:10:06 IST" name="Suite" finished-at="2026-03-01T21:10:21 IST" duration-ms="15347">
+  <suite started-at="2026-03-02T10:08:07 IST" name="Suite" finished-at="2026-03-02T10:08:17 IST" duration-ms="9584">
     <groups>
     </groups>
-    <test started-at="2026-03-01T21:10:06 IST" name="Test 1" finished-at="2026-03-01T21:10:21 IST" duration-ms="15347">
+    <test started-at="2026-03-02T10:08:07 IST" name="Test 1" finished-at="2026-03-02T10:08:17 IST" duration-ms="9584">
       <class name="testCases2.TestClass1">
-        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass1@32eff876]" started-at="2026-03-01T21:10:21 IST" name="berforeMethod" finished-at="2026-03-01T21:10:21 IST" duration-ms="1" status="SKIP">
+        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass1@32eff876]" started-at="2026-03-02T10:08:16 IST" name="berforeMethod" finished-at="2026-03-02T10:08:16 IST" duration-ms="1" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@344344fa]]>
+                <![CDATA[org.testng.TestRunner@1e886a5b]]>
               </value>
             </param>
           </params>
@@ -58,7 +58,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- berforeMethod -->
-        <test-method signature="method2()[pri:0, instance:testCases2.TestClass1@32eff876]" started-at="2026-03-01T21:10:21 IST" name="method2" finished-at="2026-03-01T21:10:21 IST" duration-ms="0" status="SKIP">
+        <test-method signature="method2()[pri:0, instance:testCases2.TestClass1@32eff876]" started-at="2026-03-02T10:08:16 IST" name="method2" finished-at="2026-03-02T10:08:16 IST" duration-ms="0" status="SKIP">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
@@ -71,7 +71,7 @@ Unable to load application,
 Unable to enter captcha
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at keywords.GenericKeywords.reportAll(GenericKeywords.java:103)
+at keywords.GenericKeywords.reportAll(GenericKeywords.java:118)
 at testBase.BaseTestClass.afterMethod(BaseTestClass.java:85)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:565)
@@ -110,11 +110,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- method2 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass1@32eff876]" started-at="2026-03-01T21:10:21 IST" name="afterMethod" finished-at="2026-03-01T21:10:21 IST" duration-ms="1" status="FAIL">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass1@32eff876]" started-at="2026-03-02T10:08:16 IST" name="afterMethod" finished-at="2026-03-02T10:08:16 IST" duration-ms="1" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@344344fa]]>
+                <![CDATA[org.testng.TestRunner@1e886a5b]]>
               </value>
             </param>
           </params>
@@ -130,7 +130,7 @@ Unable to load application,
 Unable to enter captcha
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at keywords.GenericKeywords.reportAll(GenericKeywords.java:103)
+at keywords.GenericKeywords.reportAll(GenericKeywords.java:118)
 at testBase.BaseTestClass.afterMethod(BaseTestClass.java:85)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:565)
@@ -171,29 +171,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
         </test-method> <!-- afterMethod -->
       </class> <!-- testCases2.TestClass1 -->
       <class name="testCases2.TestClass2">
-        <test-method is-config="true" signature="beforeTest(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-01T21:10:06 IST" name="beforeTest" finished-at="2026-03-01T21:10:06 IST" duration-ms="520" status="PASS">
+        <test-method is-config="true" signature="beforeTest(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-02T10:08:07 IST" name="beforeTest" finished-at="2026-03-02T10:08:07 IST" duration-ms="199" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@344344fa]]>
+                <![CDATA[org.testng.TestRunner@1e886a5b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-01T21:10:06 IST" name="berforeMethod" finished-at="2026-03-01T21:10:06 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="berforeMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-02T10:08:07 IST" name="berforeMethod" finished-at="2026-03-02T10:08:07 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@344344fa]]>
+                <![CDATA[org.testng.TestRunner@1e886a5b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- berforeMethod -->
-        <test-method signature="method4()[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-01T21:10:06 IST" name="method4" finished-at="2026-03-01T21:10:20 IST" duration-ms="13629" status="FAIL">
+        <test-method signature="method4()[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-02T10:08:07 IST" name="method4" finished-at="2026-03-02T10:08:16 IST" duration-ms="8829" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
@@ -206,9 +206,9 @@ Unable to load application,
 Unable to enter captcha
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at keywords.GenericKeywords.reportAll(GenericKeywords.java:103)
-at keywords.GenericKeywords.reportFailure(GenericKeywords.java:89)
-at testCases2.TestClass2.method4(TestClass2.java:41)
+at keywords.GenericKeywords.reportAll(GenericKeywords.java:118)
+at keywords.GenericKeywords.reportFailure(GenericKeywords.java:104)
+at testCases2.TestClass2.method4(TestClass2.java:43)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -241,11 +241,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- method4 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-01T21:10:20 IST" name="afterMethod" finished-at="2026-03-01T21:10:21 IST" duration-ms="576" status="FAIL">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-02T10:08:16 IST" name="afterMethod" finished-at="2026-03-02T10:08:16 IST" duration-ms="303" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@344344fa]]>
+                <![CDATA[org.testng.TestRunner@1e886a5b]]>
               </value>
             </param>
           </params>
@@ -261,7 +261,7 @@ Unable to load application,
 Unable to enter captcha
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at keywords.GenericKeywords.reportAll(GenericKeywords.java:103)
+at keywords.GenericKeywords.reportAll(GenericKeywords.java:118)
 at testBase.BaseTestClass.afterMethod(BaseTestClass.java:85)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:565)
@@ -300,11 +300,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTest(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-01T21:10:21 IST" name="afterTest" finished-at="2026-03-01T21:10:21 IST" duration-ms="513" status="PASS">
+        <test-method is-config="true" signature="afterTest(org.testng.ITestContext)[pri:0, instance:testCases2.TestClass2@7fa98a66]" started-at="2026-03-02T10:08:16 IST" name="afterTest" finished-at="2026-03-02T10:08:17 IST" duration-ms="210" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@344344fa]]>
+                <![CDATA[org.testng.TestRunner@1e886a5b]]>
               </value>
             </param>
           </params>

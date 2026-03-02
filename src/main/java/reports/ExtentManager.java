@@ -9,6 +9,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentManager {
 	public static ExtentReports reports;
+	public static String screenShotPath;
 
 	// 208
 	// Initialize and Create Report
@@ -23,7 +24,7 @@ public class ExtentManager {
 
 			String reportPath = System.getProperty("user.dir") + "//reports//" + reportFolderName;
 
-			String screenShotPath = reportPath + "/screenshots";
+			screenShotPath = reportPath + "/screenshots";
 
 			// To create directories
 			File file = new File(screenShotPath);

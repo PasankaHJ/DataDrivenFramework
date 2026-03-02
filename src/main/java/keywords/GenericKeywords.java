@@ -1,11 +1,18 @@
 package keywords;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 import java.util.Scanner;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +26,10 @@ import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+
+import reports.ExtentManager;
 
 public class GenericKeywords {
 	// 200
@@ -82,6 +93,10 @@ public class GenericKeywords {
 	// 211
 	public void reportFailure(String msg, boolean isCriticalFailure) {
 		logError(msg);
+
+		// 212
+		takeScreenshots();
+
 		softAssert.fail(msg);
 
 		if (isCriticalFailure) {
@@ -101,6 +116,41 @@ public class GenericKeywords {
 	// 210 - Submit all the errors to softAssert and close the assertion
 	public void reportAll() {
 		softAssert.assertAll();
+	}
+
+	// 212
+	public void takeScreenshots() {
+		// File name of screenshot
+		Date currentDate = new Date();
+
+		// Format the date and time
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyy-MM-dd_HH-mm-ss");
+		String formatedDate = dateFormat.format(currentDate);
+
+		// File name
+		String screenshotFileName = formatedDate + ".png";
+
+		// Take screenshot
+		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+		try {
+			FileUtils.copyFile(srcFile, new File(ExtentManager.screenShotPath + "//" + screenshotFileName));
+
+			// Put a screenshot in Extent Report (Single place)
+			/*
+			 test.log(Status.INFO, "Screenshot -- " + test.addScreenCaptureFromPath(ExtentManager.screenShotPath
+			  + "//" +
+			 screenshotFileName));
+			 */
+			
+			// Add screenshot within the step in the report
+			test.log(Status.FAIL, MarkupHelper.createLabel("Screenshot", ExtentColor.RED));
+			test.log(Status.FAIL, "<img src = '" + ExtentManager.screenShotPath + '/' + screenshotFileName + "'style='width: 100%' />");
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	// 200
