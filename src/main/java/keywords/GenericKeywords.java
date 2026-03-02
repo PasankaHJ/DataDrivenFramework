@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -138,15 +139,16 @@ public class GenericKeywords {
 
 			// Put a screenshot in Extent Report (Single place)
 			/*
-			 test.log(Status.INFO, "Screenshot -- " + test.addScreenCaptureFromPath(ExtentManager.screenShotPath
-			  + "//" +
-			 screenshotFileName));
+			 * test.log(Status.INFO, "Screenshot -- " +
+			 * test.addScreenCaptureFromPath(ExtentManager.screenShotPath + "//" +
+			 * screenshotFileName));
 			 */
-			
+
 			// Add screenshot within the step in the report
 			test.log(Status.FAIL, MarkupHelper.createLabel("Screenshot", ExtentColor.RED));
-			test.log(Status.FAIL, "<img src = '" + ExtentManager.screenShotPath + '/' + screenshotFileName + "'style='width: 100%' />");
-			
+			test.log(Status.FAIL, "<img src = '" + ExtentManager.screenShotPath + '/' + screenshotFileName
+					+ "'style='width: 100%' />");
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -176,7 +178,7 @@ public class GenericKeywords {
 		// driver.findElement(By.xpath(prop.getProperty(Locator))).sendKeys(string);
 		// 202
 		logInfo("Print value");
-		getElement(Locator).sendKeys(string);
+		getElement(Locator).sendKeys(prop.getProperty(string));
 	}
 
 	public void enterCaptcha(String Locator) {
@@ -280,6 +282,50 @@ public class GenericKeywords {
 	// 209
 	public void logSkip(String msg) {
 		test.log(Status.SKIP, msg);
+	}
+
+	public void waitForPageToLoad() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		int i = 0;
+
+		while (i != 0) {
+			String state = (String) js.executeScript("return document.readyState;");
+			System.out.println(state);
+
+			if (state.equals("complete")) {
+				break;
+			} else {
+				wait(2);
+			}
+			i++;
+		}
+		// Check for jQuery status
+		i = 0;
+		while (i != 10) {
+			Long d = (Long) js.executeScript("return jQuery.active;");
+			System.out.println(d);
+
+			if (d.longValue() == 0)
+				break;
+			else
+				wait(2);
+			i++;
+		}
+	}
+
+	public void wait(int time) {
+		try {
+			Thread.sleep(time * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	// This was added since waitForPageToLoad() & wait() do not work for OrangeHRM
+	public void waitForElement(String locatorKey) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator(locatorKey)));
 	}
 
 	public void select() {

@@ -1,40 +1,24 @@
 package testCases2;
 
-import org.testng.ITestContext;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.Status;
 
-import keywords.ApplicationKeywords;
 import testBase.BaseTestClass;
 
-public class TestClass2 extends BaseTestClass {
+public class LoginOrangeHRM extends BaseTestClass{
 	@Test
-	public void method3() {
-		System.out.println("Method 3");
-
-	}
-
-	@Test
-	public void doLogin() { // 208 - removed ITestContext
-		System.out.println("Method 4");
-
+	public void loginOHRM() {
 		extentTest.log(Status.INFO, "Login Test");
 		app.logInfo("Login Test");
 		extentTest.log(Status.INFO, "Open Browser");
 		app.openBrowser("browser");
 		app.openURL("URL");
-		app.click("signIn_L_xpath");
+		app.waitForElement("username_L_xpath");
+		app.isElementPresent("username_L_xpath");
 		app.type("username_L_xpath", "username");
 		app.type("password_L_xpath", "password");
-		app.enterCaptcha("captcha_L_xpath");
+		app.waitForElement("btnLogin_L_xpath");
+		app.click("btnLogin_L_xpath");
 		app.reportAll();
-
-	}
-
-	@Test
-	public void method5() {
-		System.out.println("Method 5");
-
 	}
 }

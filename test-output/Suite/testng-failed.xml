@@ -4,17 +4,17 @@
   <listeners>
     <listener class-name="listner.MyTestNGListner"/>
   </listeners>
-  <test thread-count="5" name="Test 1(failed)">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCases2.TestClass2">
+      <class name="testCases2.AddEducation">
         <methods>
           <include name="berforeMethod"/>
-          <include name="method4"/>
-          <include name="beforeTest"/>
+          <include name="addEdu"/>
           <include name="afterMethod"/>
+          <include name="beforeTest"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- testCases2.TestClass2 -->
+      </class> <!-- testCases2.AddEducation -->
     </classes>
-  </test> <!-- Test 1(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

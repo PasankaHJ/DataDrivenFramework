@@ -10,8 +10,16 @@ public class ApplicationKeywords extends ValidationKeywords {
 	public ApplicationKeywords() {
 		prop = new Properties();
 		try {
+			/*
+			 * Rediff
 			FileInputStream fStream = new FileInputStream(
 					System.getProperty("user.dir") + "//src//test//resources//rediff.properties");
+			*/
+			
+			// Orange HRM
+			FileInputStream fStream = new FileInputStream(
+					System.getProperty("user.dir") + "//src//test//resources//orangeHRM.properties");
+			
 			prop.load(fStream);
 		} catch (Exception e) {
 			e.printStackTrace();

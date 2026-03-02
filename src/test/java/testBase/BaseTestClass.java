@@ -22,7 +22,7 @@ public class BaseTestClass {
 
 	@BeforeTest
 	public void beforeTest(ITestContext context) {
-		System.out.println("BaseTestClass beforeTest");
+		//System.out.println("BaseTestClass beforeTest");
 		// 207
 		// Single app object for single test
 		// Initialize and share for all the test cases
@@ -44,7 +44,7 @@ public class BaseTestClass {
 
 	@AfterTest
 	public void afterTest(ITestContext context) {
-		System.out.println("BaseTestClass afterTest");
+		//System.out.println("BaseTestClass afterTest");
 		app = (ApplicationKeywords) context.getAttribute("app");
 		if (app != null) {
 			app.quitDriver();
@@ -78,9 +78,6 @@ public class BaseTestClass {
 	@AfterMethod(alwaysRun = true)
 	public void afterMethod(ITestContext context) {
 		app = (ApplicationKeywords) context.getAttribute("app");
-		if (app != null) {
-			app.quitDriver();
-		}
 		// 210 - Submit all soft assertion failures
 		app.reportAll();
 	}

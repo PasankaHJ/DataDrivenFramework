@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-
 	<listeners>
 		<listener class-name="listner.MyTestNGListner">
 		</listener>
 	</listeners>
-	<test name="Test 1">
+
+	<test thread-count="5" name="Test">
 		<classes>
-			<class name="testCases2.TestClass2">
+			<class name="testCases2.LoginOrangeHRM">
 				<methods>
-					<include name="doLogin" />
+					<include name="loginOHRM" />
 				</methods>
 			</class>
-			<class name="testCases2.TestClass1">
+			<class name="testCases2.AddEducation">
 				<methods>
-					<include name="createPortfolio" />
+					<include name="navigateEdu" />
+				</methods>
+			</class>
+			<class name="testCases2.AddEducation">
+				<methods>
+					<include name="addEdu" />
 				</methods>
 			</class>
 		</classes>
-	</test>
-	<!--
-	<test name="Test 2">
-		<classes>
-			<class name="testCases2.TestClass3">
-				<methods>
-					<include name="method6" />
-				</methods>
-			</class>
-		</classes>
-	</test>
-	-->
+	</test> <!--
+	Test -->
 </suite> <!--
 Suite -->

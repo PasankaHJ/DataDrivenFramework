@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Selenium\DataDrivenFramework\src\test\resources\testng.xml</span>
+                    <span>C:\Selenium\DataDrivenFramework\src\test\resources\testngorange.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testCases2.TestClass2" class="method navigator-link" hash-for-method="method4">method4</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,7 +103,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testCases2.TestClass1" class="method navigator-link" hash-for-method="method2">method2</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testCases2.AddEducation" class="method navigator-link" hash-for-method="addEdu">addEdu</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testCases2.LoginOrangeHRM" class="method navigator-link" hash-for-method="loginOHRM">loginOHRM</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -132,53 +123,32 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testCases2.TestClass2</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="method4">
-                  </a> <!-- method4 -->
-                  <span class="method-name">method4</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: net::ERR_NAME_NOT_RESOLVED
-  (Session info: chrome=145.0.7632.117)
-Build info: version: &apos;4.38.0&apos;, revision: &apos;6b412e825c*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [98d2a4dfdea980c545056815471a3add, get {url=https://moneyxxxx.rediffxxxxxxx.com/}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.117, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\PASANK~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52355}, goog:processID: 16864, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52355/devtoo..., se:cdpVersion: 145.0.7632.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 98d2a4dfdea980c545056815471a3add
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-	at keywords.GenericKeywords.openURL(GenericKeywords.java:161)
-	at testCases2.TestClass2.method4(TestClass2.java:34)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-... Removed 28 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testCases2.TestClass1</span>
+              <span class="class-name">testCases2.AddEducation</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="method2">
-                  </a> <!-- method2 -->
-                  <span class="method-name">method2</span>
+                  <a name="addEdu">
+                  </a> <!-- addEdu -->
+                  <span class="method-name">addEdu</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testCases2.LoginOrangeHRM</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginOHRM">
+                  </a> <!-- loginOHRM -->
+                  <span class="method-name">loginOHRM</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -186,7 +156,7 @@ Session ID: 98d2a4dfdea980c545056815471a3add
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Selenium\DataDrivenFramework\src\test\resources\testng.xml</span>
+            <span class="header-content">C:\Selenium\DataDrivenFramework\src\test\resources\testngorange.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -196,20 +166,25 @@ Session ID: 98d2a4dfdea980c545056815471a3add
   &lt;listeners&gt;
     &lt;listener class-name=&quot;listner.MyTestNGListner&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test 1&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases2.TestClass2&quot;&gt;
+      &lt;class name=&quot;testCases2.LoginOrangeHRM&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;method4&quot;/&gt;
+          &lt;include name=&quot;loginOHRM&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testCases2.TestClass2 --&gt;
-      &lt;class name=&quot;testCases2.TestClass1&quot;&gt;
+      &lt;/class&gt; &lt;!-- testCases2.LoginOrangeHRM --&gt;
+      &lt;class name=&quot;testCases2.AddEducation&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;method2&quot;/&gt;
+          &lt;include name=&quot;navigateEdu&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testCases2.TestClass1 --&gt;
+      &lt;/class&gt; &lt;!-- testCases2.AddEducation --&gt;
+      &lt;class name=&quot;testCases2.AddEducation&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;addEdu&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testCases2.AddEducation --&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test 1 --&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -221,7 +196,7 @@ Session ID: 98d2a4dfdea980c545056815471a3add
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test 1 (2 classes)</span>
+                <span class="test-name">Test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -249,18 +224,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'method4')
-data.setCell(0, 2, 'testCases2.TestClass2')
-data.setCell(0, 3, 4059);
+data.setCell(0, 1, 'loginOHRM')
+data.setCell(0, 2, 'testCases2.LoginOrangeHRM')
+data.setCell(0, 3, 108955);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'method2')
-data.setCell(1, 2, 'testCases2.TestClass1')
-data.setCell(1, 3, 1);
+data.setCell(1, 1, 'addEdu')
+data.setCell(1, 2, 'testCases2.AddEducation')
+data.setCell(1, 3, 14);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -275,26 +250,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">5 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">testCases2.TestClass2</span>
+              <span class="ignored-class-name">testCases2.AddEducation</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">method3</span>
-                <br/>
-                <span class="ignored-method-name">method5</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testCases2.TestClass1</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">beforeTest</span>
-                <br/>
-                <span class="ignored-method-name">method1</span>
-                <br/>
                 <span class="ignored-method-name">afterTest</span>
+                <br/>
+                <span class="ignored-method-name">beforeTest</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -306,46 +270,44 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases2.TestClass2</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases2.LoginOrangeHRM</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">beforeTest(org.testng.TestRunner@6050462a)</span>
+                <span class="method-name">beforeTest(org.testng.TestRunner@5b2f8ab6)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
-                <span class="method-name">berforeMethod(org.testng.TestRunner@6050462a)</span>
-                <span class="method-start">608 ms</span>
+                <span class="method-name">berforeMethod(org.testng.TestRunner@5b2f8ab6)</span>
+                <span class="method-start">518 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">method4</span>
-                <span class="method-start">611 ms</span>
+                <span class="method-name">loginOHRM</span>
+                <span class="method-start">520 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod(org.testng.TestRunner@6050462a)</span>
-                <span class="method-start">4700 ms</span>
+                <span class="method-name">afterMethod(org.testng.TestRunner@5b2f8ab6)</span>
+                <span class="method-start">109483 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases2.TestClass1</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases2.AddEducation</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">berforeMethod(org.testng.TestRunner@6050462a)</span>
-                <span class="method-start">15878 ms</span>
+                <span class="method-name">berforeMethod(org.testng.TestRunner@5b2f8ab6)</span>
+                <span class="method-start">109498 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">method2</span>
-                <span class="method-start">15879 ms</span>
+                <span class="method-name">addEdu</span>
+                <span class="method-start">109499 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod(org.testng.TestRunner@6050462a)</span>
-                <span class="method-start">15885 ms</span>
+                <span class="method-name">afterMethod(org.testng.TestRunner@5b2f8ab6)</span>
+                <span class="method-start">109520 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases2.TestClass2</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases2.LoginOrangeHRM</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
-                <span class="method-name">afterTest(org.testng.TestRunner@6050462a)</span>
-                <span class="method-start">15886 ms</span>
+                <span class="method-name">afterTest(org.testng.TestRunner@5b2f8ab6)</span>
+                <span class="method-start">109522 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
