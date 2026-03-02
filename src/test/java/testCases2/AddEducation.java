@@ -24,4 +24,9 @@ public class AddEducation  extends BaseTestClass{
 		extentTest.log(Status.INFO, "Add Education");
 		
 	}
+	
+	@Test
+	public void verifyEducationIsPresent() {
+		extentTest.log(Status.INFO, "Verify Education Is Present");
+	}
 }
